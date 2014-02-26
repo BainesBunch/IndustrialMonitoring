@@ -1,0 +1,712 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Alarm Monitor</title>
+        <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
+        <meta content="True" name="HandheldFriendly"/>
+        <script type="text/javascript" src="jquery.js"></script>
+ <script type="text/javascript">
+
+    String.prototype.trim = function () {return this.replace(/^\s*/, "").replace(/\s*$/, "");};
+
+     function ReadStates() 
+    {
+
+        url  = '/ReadStates'
+
+        $.ajax({type: "GET",
+	        cache: false,
+	        url:  url,
+	        success: function(status) 
+	        {
+			  var TempList = status.split('~');
+			  for (var i=1;i <= TempList.length; i ++)
+			  {
+			  	var Tempvalues = TempList[i-1].split('^');
+                document.getElementById("PinNumber" + i.toString()).innerHTML = pad(Tempvalues[0],2);
+               	document.getElementById("Location" + i.toString()).value = Tempvalues[1];
+               	document.getElementById("InputType" + i.toString()).value = Tempvalues[2];
+                document.getElementById("SendEmail" + i.toString()).checked  = (Tempvalues[3] == "Y");
+                document.getElementById("Triggered" + i.toString()).innerHTML = Tempvalues[4];
+                document.getElementById("TriggerTime" + i.toString()).innerHTML = Tempvalues[5];
+			  }
+			  
+	        },
+	        error: function(s, status) 
+	        {
+		//    alert("Getting status failed, URL : " + url + ", Status : " + status);
+	        }
+	       });
+    }
+
+	
+	
+	
+
+	function ReadSMTPDetails()
+	{ 
+        url  = '/ReadSMTPDetails'
+
+        $.ajax({type: "GET",
+	        cache: false,
+	        url:  url,
+	        success: function(status) 
+	        {
+  	         	var TempList = status.split(':');
+                document.getElementById("SMPTServer").value = TempList[0];
+                document.getElementById("SMPTUser").value = TempList[1];
+                document.getElementById("SMPTPass").value = TempList[2];
+                document.getElementById("SMPTAddress").value = TempList[3];
+	        },
+	        error: function(s, status) 
+	        {
+		//    alert("Getting status failed, URL : " + url + ", Status : " + status);
+	        }
+	       });
+	}	
+	
+	
+	
+	
+	function TriggerReset(myIinputPin)
+	{
+	
+       url  = '/TriggerReset'
+       $.ajax({type: "POST",
+       data: myIinputPin.toString(),
+       dataType: "text",
+       cache: false,
+       url: url,
+       success: function(r) { ReadStates(); }
+       ,
+        error: function(s) 
+        {
+	//    alert("Setting Temp failed, URL : " + url);
+        }
+      });
+	}	
+
+	function SMTPReset()
+	{
+	
+       url  = '/SMTPReset'
+       $.ajax({type: "POST",
+       data: "SMTPReset",
+       dataType: "text",
+       cache: false,
+       url: url,
+       success: function(r) { GetReadings(); }
+       ,
+        error: function(s) 
+        {
+	//    alert("Setting Temp failed, URL : " + url);
+        }
+      });
+	}
+	
+	
+    function SMTPChange() 
+    {
+      var 	SMPTParams = document.getElementById("SMPTServer").value + ":";
+	  	  	SMPTParams += document.getElementById("SMPTUser").value + ":";
+	  	  	SMPTParams += document.getElementById("SMPTPass").value + ":";
+	  	  	SMPTParams += document.getElementById("SMPTAddress").value;
+
+       url  = '/SMTPChange'
+       $.ajax({type: "POST",
+       data: SMPTParams,
+       dataType: "text",
+       cache: false,
+       url: url,
+       success: function(r) { GetReadings(); }
+       ,
+        error: function(s) 
+        {
+	//    alert("Setting Temp failed, URL : " + url);
+        }
+      });
+    }
+
+
+
+function pad(number, length) {
+   
+    var str = '' + number;
+    while (str.length < length) {
+        str = '0' + str;
+    }
+   
+    return str;
+
+}
+
+
+
+
+    function ReadStatus() 
+    {
+      ReadStates();
+	  window.setTimeout(ReadStatus, 5000);
+    }
+
+	
+	function show()
+	{
+	 	document.getElementById('expand').style.display = 'block';
+	}
+	
+
+    $(document).ready(function() {ReadSMTPDetails();ReadStatus();});
+
+
+    </script>
+        <title>Alarm Monitor</title>
+        <style type="text/css">
+            h1 {
+                background-image: url("tBar.png");
+                color: #fff;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 22px;
+            }
+            h2 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+            }
+            body {
+                background-image: url("bkg.png");
+                text-align: center;
+            }
+            v\:roundrect {
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                background-color: #aaa;
+                border-radius: 10px;
+                display: block;
+                margin: 0px auto;
+                width: 900px;
+            }
+            /* ie specific */
+            v\:roundrect {
+                /background-color: transparent;
+                /border: none;
+                /height: 100%;
+                /margin: 12;
+                behavior: url("#default#VML");
+            }
+
+			form {
+                background-color: #aaa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: medium;
+                text-align: center;
+                vertical-align: middle;
+            }
+            img.center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+			div#expand {
+			display:none;
+			}			
+			div#expand_Top{
+			display:block;
+			}			
+			
+        </style>
+    </head>
+    <body>
+        <xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v"/>
+        <text-align: center>
+            <div class="light">
+                <div class="center">
+                    <H1 align="center">Alarm Monitor</H1>
+                    <v:roundrect arcsize=".04" fillcolor="#AAA">
+                        <Table cellpadding="15" width="100%" align="Center">
+                            <tr>
+                                <td>
+                                    <fieldset style="text-align:Center;">
+                                        <legend><b>Current Status</b></legend>
+										<div id="expand_Top">
+                                        <Table cellpadding="5">
+                                            <tr width="100%">
+											<td align="Left">
+												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Pin&nbsp;#</label>
+											</td>
+											<td align="Left">
+												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Location</label>
+											</td>
+											<td align="Left">
+												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Input&nbsp;Type</label>
+											</td>
+											<td align="Left">
+												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Send&nbsp;Email</label>
+											</td>
+											<td align="Left">
+												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Triggered</label>
+											</td>
+											<td align="center">
+												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Trigger&nbsp;Time</label>
+											</td>
+											<td align="center">
+												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Action</label>
+											</td>
+											</tr>
+
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber1" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location1" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType1">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail1" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered1" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime1" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(0)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber2" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location2" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType2">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail2" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                        <label ID="Triggered2" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime2" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(1)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber3" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location3" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType3">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail3" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered3" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime3" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(2)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber4" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location4" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType4">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail4" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered4" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime4" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(3)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber5" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location5" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType5">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail5" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered5" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime5" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(4)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber6" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location6" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType6">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail6" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered6" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime6" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(5)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber7" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location7" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType7">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail7" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered7" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime7" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(6)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber8" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location8" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType8">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail8" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered8" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime8" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(7)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber9" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location9" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType9">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail9" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered9" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime9" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(8)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber10" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location10" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType10">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail10" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered10" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime10" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(9)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber11" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location11" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType11">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail11" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered11" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime11" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(10)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber12" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location12" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType12">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail12" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered12" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime12" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(11)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber13" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location13" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType13">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail13" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered13" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime13" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(12)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                            <tr>
+                                                <td align="center">
+                                                      <label ID="PinNumber14" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">0</label>
+                                            	</td>
+                                                <td>
+                                                      <input ID="Location14" type="text" size="50"></input>
+                                            	</td>
+												<td  align="center">
+													<select ID="InputType14">
+														<option value="1">Switch</option> 
+														<option value="2" selected>PIR</option>
+													</select>
+												</td>
+												<td  align="center">
+													<input ID="SendEmail14" type="checkbox" name="vehicle" value="Bike">
+												</td>
+                                                <td align="center">
+                                                      <label ID="Triggered14" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+                                                <td align="center" nowrap>
+                                                      <label ID="TriggerTime14" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                            	</td>
+							  					<td align="center">
+													<button onclick="JavaScript:TriggerReset(13)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+                                        	</tr>
+                                        	<tr align="right" width="100%" >
+							  					<td align="right" width="100%" colspan="7">
+													<button onclick="JavaScript:SMTPChange()" style="height:30;width:140;font-size: 15px;font-weight: bold;text-align:center;" type="button">Update Settings</button>
+                                           		</td>
+                                        	</tr>
+
+										</Table>
+										</div>
+										<br>
+                                	</fieldset>
+									<div  align="right">
+									  <a href="#" onclick="document.getElementById('expand_Top').style.display=(document.getElementById('expand_Top').style.display=='block')?'none':'block';">Show/Hide Settings</a>
+									</div>
+									
+                            	</td>
+							</tr>
+                        </Table>
+					</v:roundrect>
+				
+                    <v:roundrect arcsize=".04" fillcolor="#AAA">
+                        <Table cellpadding="15" width="100%" align="center">
+                            <tr>
+                                <td>
+                                    <fieldset style="text-align:center;">
+                                        <legend><b>SMTP Settings</b></legend>
+										<br>
+										<div id="expand">
+                                        <Table cellpadding="1">
+                                            <tr>
+											<td>
+												<label style="color:#0000;font-size: 12px;font-weight: bold;text-align:Center;">SMTP&nbsp;Server :</label>
+											</td>
+                                                <td>
+                                                      <input  ID="SMPTServer" type="text"></input>
+                                            	</td>
+                                        	</tr>
+                                            <tr>
+											<td>
+												<label style="color:#0000;font-size: 12px;font-weight: bold;text-align:Center;">User :</label>
+											</td>
+                                                <td>
+                                                      <input ID="SMPTUser" type="text"></input>
+                                            	</td>
+                                        	</tr>
+                                            <tr>
+
+											<td>
+												<label style="color:#0000;font-size: 12px;font-weight: bold;text-align:Center;">Pass :</label>
+											</td>
+                                                <td>
+                                                      <input ID="SMPTPass" type="text"></input>
+                                            	</td>
+											</tr>
+                                            <tr>
+
+											<td>
+												<label style="color:#0000;font-size: 12px;font-weight: bold;text-align:Center;">Address :</label>
+											</td>
+                                                <td>
+                                                      <input ID="SMPTAddress" type="text"></input>
+                                            	</td>
+
+                                        	</tr>
+                                        	<tr align="Center" width="100%">
+							  					<td align="left" width="50%">
+													<button onclick="JavaScript:SMTPChange()" style="height:30;width:140;font-size: 15px;font-weight: bold;text-align:center;" type="button">Update Settings</button>
+                                           		</td>
+							  					<td align="right" width="50%">
+													<button onclick="JavaScript:SMTPReset()" style="height:30;width:120;font-size: 15px;font-weight: bold;text-align:center;" type="button">Reset Alerts</button>
+                                           		</td>
+                                        	</tr>
+										</Table>
+										</div>
+                                	</fieldset>
+									<div  align="right">
+									  <a href="#" onclick="document.getElementById('expand').style.display=(document.getElementById('expand').style.display=='block')?'none':'block';">Show/Hide Settings</a>
+									</div>
+                            	</td>
+							</tr>
+                        </Table>
+					</v:roundrect>
+					
+										
+					
+				</div>
+			</div>
+		</body>
+</html>

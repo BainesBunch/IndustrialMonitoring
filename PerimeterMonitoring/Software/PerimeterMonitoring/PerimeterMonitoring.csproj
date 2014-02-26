@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyName>PerimeterMonitoring</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PerimeterMonitoring</RootNamespace>
+    <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCA6EB11-E0B3-4756-853E-D540031B0FF4}</ProjectGuid>
+    <TargetFrameworkVersion>v4.2</TargetFrameworkVersion>
+    <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
+    <DeployDevice>NetduinoPlus</DeployDevice>
+    <DeployTransport>USB</DeployTransport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>NS_PerimeterMonitor.PerimeterMonitor</StartupObject>
+  </PropertyGroup>
+  <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PerimeterMonitoring.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SPOT.Hardware" />
+    <Reference Include="Microsoft.SPOT.Hardware.PWM" />
+    <Reference Include="Microsoft.SPOT.Hardware.SerialPort" />
+    <Reference Include="Microsoft.SPOT.Native" />
+    <Reference Include="Microsoft.SPOT.Net" />
+    <Reference Include="SecretLabs.NETMF.Hardware" />
+    <Reference Include="SecretLabs.NETMF.Hardware.NetduinoPlus" />
+    <Reference Include="System" />
+    <Reference Include="System.IO" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\GenericLibs\NTPSupport\NTPSupport.csproj">
+      <Project>{204DB244-C38A-49F3-9D1F-EFE0B3EFEC46}</Project>
+      <Name>NTPSupport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GenericLibs\SMTPSupport\SMTPSupport.csproj">
+      <Project>{05F0BB90-7CEB-4EFC-B21E-D18CD52373AA}</Project>
+      <Name>SMTPSupport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\GenericLibs\TinyWS\TinyWS.csproj">
+      <Project>{DDD30B13-E0D4-4604-9310-1DAAC7F3E9B6}</Project>
+      <Name>TinyWS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InputMonitoring\InputMonitoring.csproj">
+      <Project>{E368C997-E7A6-4834-A181-4E4B6F0BB799}</Project>
+      <Name>InputMonitoring</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

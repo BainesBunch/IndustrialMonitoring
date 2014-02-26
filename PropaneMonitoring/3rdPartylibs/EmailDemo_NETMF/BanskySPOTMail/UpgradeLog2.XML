@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="BanskySPOTMail">
+</Property><Property Name="Solution File" Value="C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\BanskySPOTMail.sln">
+</Property><Property Name="User Options File" Value="C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\BanskySPOTMail.suo">
+</Property><Property Name="Date" Value="17 February 2014">
+</Property><Property Name="Time" Value="21:22">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="BanskySPOTMail.sln" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail.sln">
+</Event><Event ErrorLevel="0" Project="" Source="BanskySPOTMail.suo" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail.suo">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\BanskySPOTMail.csproj" Description="Project file successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\BanskySPOTMail.csproj">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\BanskySPOTMail.csproj.user" Description="Project user file successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\BanskySPOTMail.csproj.user">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\Attachment.cs" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\Attachment.cs">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\Base64.cs" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\Base64.cs">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\MailAddress.cs" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\MailAddress.cs">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\MailMessage.cs" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\MailMessage.cs">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\Properties\AssemblyInfo.cs" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\SmtpClient.cs" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\SmtpClient.cs">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\SmtpErrorCode.cs" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\SmtpErrorCode.cs">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\SmtpException.cs" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\SmtpException.cs">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\TransferEncoding.cs" Description="File successfully backed up as C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\EmailDemo_NETMF\BanskySPOTMail\Backup1\BanskySPOTMail\TransferEncoding.cs">
+</Event><Event ErrorLevel="0" Project="BanskySPOTMail" Source="BanskySPOTMail\BanskySPOTMail.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="BanskySPOTMail" Source="BanskySPOTMail\BanskySPOTMail.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="BanskySPOTMail.sln" Description="The solution file does not require conversion.">
+</Event><Event ErrorLevel="3" Project="" Source="BanskySPOTMail.sln" Description="No Conversion Required">
+</Event></UpgradeLog>

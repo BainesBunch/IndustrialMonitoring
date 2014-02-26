@@ -1,0 +1,77 @@
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\le\HttpServerExampleV2.exe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\be\HttpServerExampleV2.exe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\le\HttpServerExampleV2.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\be\HttpServerExampleV2.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\HttpServerExampleV2.exe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\HttpServerExampleV2.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\le\HttpServerExampleV2.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\le\HttpServerExampleV2.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\be\HttpServerExampleV2.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\be\HttpServerExampleV2.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\HttpLibrary.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\HttpLibrary.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\HttpLibrary.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\HttpLibrary.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\HttpLibrary.dll
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.dll
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.NetduinoPlus.dll
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\HttpLibrary.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\TinyCLR_DebugReferences.cache
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\be\HttpServerExampleV2.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\be\HttpServerExampleV2.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\le\HttpServerExampleV2.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\le\HttpServerExampleV2.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\HttpServerExampleV2.exe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\HttpServerExampleV2.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\le\HttpServerExampleV2.exe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\be\HttpServerExampleV2.exe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\le\HttpServerExampleV2.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\be\HttpServerExampleV2.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\HttpServerExampleV2.exe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\HttpServerExampleV2.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\le\HttpServerExampleV2.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\le\HttpServerExampleV2.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\be\HttpServerExampleV2.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\be\HttpServerExampleV2.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\HttpLibrary.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\HttpLibrary.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\HttpLibrary.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\HttpLibrary.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\HttpLibrary.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.NetduinoPlus.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\HttpLibrary.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\TinyCLR_DebugReferences.cache
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\be\HttpServerExampleV2.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\be\HttpServerExampleV2.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\le\HttpServerExampleV2.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\le\HttpServerExampleV2.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\HttpServerExampleV2.exe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\obj\Debug\HttpServerExampleV2.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.Netduino.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.Netduino.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\LE\SecretLabs.NETMF.Hardware.Netduino.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\BE\SecretLabs.NETMF.Hardware.Netduino.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.Netduino.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpServerExampleV2\HttpServerExampleV2\bin\Debug\SecretLabs.NETMF.Hardware.Netduino.pdb

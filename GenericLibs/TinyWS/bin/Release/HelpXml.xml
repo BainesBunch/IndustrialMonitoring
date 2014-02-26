@@ -1,0 +1,240 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HttpLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:HttpLibrary.OnErrorDelegate">
+            <summary>
+            on error interface
+            </summary>
+            <param name="sender">sender object</param>
+            <param name="e">arguments</param>
+        </member>
+        <member name="T:HttpLibrary.OnRequestReceivedDelegate">
+            <summary>
+            on request received interface
+            </summary>
+            <param name="sender">sender object</param>
+            <param name="e">arguments</param>
+        </member>
+        <member name="T:HttpLibrary.ServerCredentials">
+            <summary>
+            credentials class
+            </summary>
+        </member>
+        <member name="F:HttpLibrary.ServerCredentials.ServerOwner">
+            <summary>
+            server owner used in the username/password display form 
+            </summary>
+        </member>
+        <member name="F:HttpLibrary.ServerCredentials.UserName">
+            <summary>
+            username
+            </summary>
+        </member>
+        <member name="F:HttpLibrary.ServerCredentials.Password">
+            <summary>
+            password
+            </summary>
+        </member>
+        <member name="F:HttpLibrary.ServerCredentials.Key">
+            <summary>
+            Base64 encrypted username and password 
+            </summary>
+        </member>
+        <member name="M:HttpLibrary.ServerCredentials.#ctor(System.String,System.String,System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="ServerOwner">owner name</param>
+            <param name="UserName">username</param>
+            <param name="Password">password</param>
+        </member>
+        <member name="M:HttpLibrary.ServerCredentials.ReadFromFile(System.String)">
+            <summary>
+            function for reading a saved file 
+            </summary>
+            <param name="FileName">filename only</param>
+            <returns>constructed ServerCredentials object read from a saved file</returns>
+        </member>
+        <member name="M:HttpLibrary.ServerCredentials.WriteToFile(System.String,HttpLibrary.ServerCredentials)">
+            <summary>
+            function for writing credentials into file
+            </summary>
+            <param name="FileName">filename only</param>
+            <param name="Credentials">ServerCredentials object to save</param>
+        </member>
+        <member name="T:HttpLibrary.ServerConfiguration">
+            <summary>
+            server configuration class
+            </summary>
+        </member>
+        <member name="F:HttpLibrary.ServerConfiguration.IpAddress">
+            <summary>
+            listening ip address
+            </summary>
+        </member>
+        <member name="F:HttpLibrary.ServerConfiguration.SubnetMask">
+            <summary>
+            network subnet mask
+            </summary>
+        </member>
+        <member name="F:HttpLibrary.ServerConfiguration.DefaultGateWay">
+            <summary>
+            usually routers ip address
+            </summary>
+        </member>
+        <member name="F:HttpLibrary.ServerConfiguration.ListenPort">
+            <summary>
+            listening port
+            </summary>
+        </member>
+        <member name="M:HttpLibrary.ServerConfiguration.#ctor(System.String,System.String,System.String,System.Int32)">
+            <summary>
+            constructor
+            </summary>
+            <param name="IpAddress">listening ip address</param>
+            <param name="SubnetMask">network subnet mask</param>
+            <param name="DefaultGateWay">default gateway ip address</param>
+            <param name="ListenPort">listening port</param>
+        </member>
+        <member name="T:HttpLibrary.OnErrorEventArgs">
+            <summary>
+            error arguments passed when event is fired
+            </summary>
+        </member>
+        <member name="M:HttpLibrary.OnErrorEventArgs.#ctor(System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="EVENT_MESSAGE">message</param>
+        </member>
+        <member name="P:HttpLibrary.OnErrorEventArgs.EventMessage">
+            <summary>
+            event message
+            </summary>
+        </member>
+        <member name="T:HttpLibrary.OnRequestReceivedArgs">
+            <summary>
+            request received arguments passed when a request received event fires
+            </summary>
+        </member>
+        <member name="M:HttpLibrary.OnRequestReceivedArgs.#ctor(System.String,System.Boolean,System.Byte[])">
+            <summary>
+            constructor
+            </summary>
+            <param name="FILE_NAME">filename</param>
+            <param name="IS_IN_MMC">is in memory card</param>
+            <param name="REQUEST">http request</param>
+        </member>
+        <member name="P:HttpLibrary.OnRequestReceivedArgs.FileName">
+            <summary>
+            name of the file in the request
+            </summary>
+        </member>
+        <member name="P:HttpLibrary.OnRequestReceivedArgs.IsInMemoryCard">
+            <summary>
+            is file in memory card
+            </summary>
+        </member>
+        <member name="P:HttpLibrary.OnRequestReceivedArgs.Request">
+            <summary>
+            request itself
+            </summary>
+        </member>
+        <member name="T:HttpLibrary.HttpServer">
+            <summary>
+            HttpServer class
+            </summary>
+        </member>
+        <member name="M:HttpLibrary.HttpServer.OnServerErrorFunction(HttpLibrary.OnErrorEventArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:HttpLibrary.HttpServer.OnRequestReceivedFunction(HttpLibrary.OnRequestReceivedArgs)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:HttpLibrary.HttpServer.#ctor(HttpLibrary.ServerConfiguration,System.Int32,System.Int32,System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="Config">server configuration object</param>
+            <param name="ReceiveBufferSize">receiving buffer size in bytes</param>
+            <param name="SendBufferSize">sending buffer size in bytes</param>
+            <param name="pages_folder">usually @"\SD" which is the sd card directory path</param>
+        </member>
+        <member name="M:HttpLibrary.HttpServer.#ctor(HttpLibrary.ServerConfiguration,HttpLibrary.ServerCredentials,System.Int32,System.Int32,System.String)">
+            <summary>
+            constructor
+            </summary>
+            <param name="Config">server configuration object</param>
+            <param name="Credentials">server credentials object</param>
+            <param name="ReceiveBufferSize">receiving buffer size in bytes</param>
+            <param name="SendBufferSize">sending buffer size in bytes</param>
+            <param name="pages_folder">usually @"\SD" which is the sd card directory path</param>
+        </member>
+        <member name="M:HttpLibrary.HttpServer.Start">
+            <summary>
+            starts the server 
+            </summary>
+        </member>
+        <member name="M:HttpLibrary.HttpServer.Stop">
+            <summary>
+            stops the server
+            </summary>
+        </member>
+        <member name="M:HttpLibrary.HttpServer.Send(System.String)">
+            <summary>
+            sends a file from mmc 
+            </summary>
+            <param name="FileName">complete file name ex: \SD\test.html</param>
+        </member>
+        <member name="M:HttpLibrary.HttpServer.Send(System.Byte[])">
+            <summary>
+            sends an array of bytes in chunks of 256 if greater than 256
+            </summary>
+            <param name="data">byte array data to send</param>
+        </member>
+        <member name="M:HttpLibrary.HttpServer.SendNotFound">
+            <summary>
+            sends a 404 not found page
+            </summary>
+        </member>
+        <member name="P:HttpLibrary.HttpServer.SecurityEnabled">
+            <summary>
+            returns if server uses credentials
+            </summary>
+        </member>
+        <member name="P:HttpLibrary.HttpServer.Configuration">
+            <summary>
+            the servers configuration parameters
+            </summary>
+        </member>
+        <member name="P:HttpLibrary.HttpServer.IsServerRunning">
+            <summary>
+            returns server configuration
+            </summary>
+        </member>
+        <member name="P:HttpLibrary.HttpServer.RunningThread">
+            <summary>
+            the server running thread handle
+            </summary>
+        </member>
+        <member name="E:HttpLibrary.HttpServer.OnServerError">
+            <summary>
+            event fired when an error occures
+            </summary>
+        </member>
+        <member name="E:HttpLibrary.HttpServer.OnRequestReceived">
+            <summary>
+            an event fired when server receives a request from a client
+            </summary>
+        </member>
+    </members>
+</doc>

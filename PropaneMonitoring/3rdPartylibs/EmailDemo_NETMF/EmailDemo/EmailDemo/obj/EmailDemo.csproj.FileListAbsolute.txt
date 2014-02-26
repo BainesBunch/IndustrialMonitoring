@@ -1,0 +1,12 @@
+D:\Export\EmailDemo\EmailDemo\obj\Debug\ResolveAssemblyReference.cache
+D:\Export\EmailDemo\EmailDemo\obj\Debug\TinyCLR_DebugReferences.cache
+D:\Export\EmailDemo\EmailDemo\bin\Debug\EmailDemo.exe.manifest
+D:\Export\EmailDemo\EmailDemo\bin\Debug\EmailDemo.exe
+D:\Export\EmailDemo\EmailDemo\bin\Debug\EmailDemo.pdb
+D:\Export\EmailDemo\EmailDemo\bin\Debug\Bansky.SPOT.Mail.dll
+D:\Export\EmailDemo\EmailDemo\bin\Debug\Bansky.SPOT.Mail.pdb
+D:\Export\EmailDemo\EmailDemo\bin\Debug\Bansky.SPOT.Mail.xml
+D:\Export\EmailDemo\EmailDemo\obj\Debug\EmailDemo.exe.manifest
+D:\Export\EmailDemo\EmailDemo\obj\Debug\EmailDemo.pe
+D:\Export\EmailDemo\EmailDemo\obj\Debug\EmailDemo.exe
+D:\Export\EmailDemo\EmailDemo\obj\Debug\EmailDemo.pdb

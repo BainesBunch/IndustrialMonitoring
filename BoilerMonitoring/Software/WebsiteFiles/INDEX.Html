@@ -1,0 +1,404 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Boiler Monitor</title>
+        <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport"/>
+        <meta content="True" name="HandheldFriendly"/>
+        <script type="text/javascript" src="jquery.js"></script>
+ <script type="text/javascript">
+
+    String.prototype.trim = function () {return this.replace(/^\s*/, "").replace(/\s*$/, "");};
+
+      function GetReadings() 
+    {
+
+        url  = '/ReadRegisters'
+
+        $.ajax({type: "GET",
+	        cache: false,
+	        url:  url,
+	        success: function(status) 
+	        {
+			    var TempList = status.split(':');
+                document.getElementById("TankTempValue").innerHTML = pad(TempList[0],2);
+                document.getElementById("ExternTempValue").innerHTML = pad(TempList[1],2);
+                document.getElementById("Status").innerHTML = TempList[2];
+                document.getElementById("Blocks").innerHTML = TempList[3];
+	        },
+	        error: function(s, status) 
+	        {
+		//    alert("Getting status failed, URL : " + url + ", Status : " + status);
+	        }
+	       });
+    };
+
+	function ReadTriggerPoints()
+	{			  
+        url  = '/ReadTriggerPoints'
+
+        $.ajax({type: "GET",
+	        cache: false,
+	        url:  url,
+	        success: function(status) 
+	        {
+  	        var TempList = status.split(':');
+                document.getElementById("LevelThreshold").innerHTML = TempList[0];
+	        },
+	        error: function(s, status) 
+	        {
+		//    alert("Getting status failed, URL : " + url + ", Status : " + status);
+	        }
+	       });
+	}
+
+
+
+	function ReadSMTPDetails()
+	{ 
+        url  = '/ReadSMTPDetails'
+
+        $.ajax({type: "GET",
+	        cache: false,
+	        url:  url,
+	        success: function(status) 
+	        {
+  	         	var TempList = status.split(':');
+                document.getElementById("SMPTServer").value = TempList[0];
+                document.getElementById("SMPTUser").value = TempList[1];
+                document.getElementById("SMPTPass").value = TempList[2];
+                document.getElementById("SMPTAddress").value = TempList[3];
+	        },
+	        error: function(s, status) 
+	        {
+		//    alert("Getting status failed, URL : " + url + ", Status : " + status);
+	        }
+	       });
+	}	
+	
+
+    function TankLevelValueChange(newValue) 
+    {
+       url  = '/TankLevelValueChange'
+       $.ajax({type: "POST",
+       data: newValue,
+       dataType: "text",
+       cache: false,
+       url: url,
+       success: function(r) { GetReadings(); }
+       ,
+        error: function(s) 
+        {
+	//    alert("Setting Temp failed, URL : " + url);
+        }
+      });
+    };
+
+
+	function SMTPReset()
+	{
+	
+       url  = '/SMTPReset'
+       $.ajax({type: "POST",
+       data: "SMTPReset",
+       dataType: "text",
+       cache: false,
+       url: url,
+       success: function(r) { GetReadings(); }
+       ,
+        error: function(s) 
+        {
+	//    alert("Setting Temp failed, URL : " + url);
+        }
+      });
+	}
+	
+	
+    function SMTPChange() 
+    {
+      var 	SMPTParams = document.getElementById("SMPTServer").value + ":";
+	  	  	SMPTParams += document.getElementById("SMPTUser").value + ":";
+	  	  	SMPTParams += document.getElementById("SMPTPass").value + ":";
+	  	  	SMPTParams += document.getElementById("SMPTAddress").value;
+
+       url  = '/SMTPChange'
+       $.ajax({type: "POST",
+       data: SMPTParams,
+       dataType: "text",
+       cache: false,
+       url: url,
+       success: function(r) { GetReadings(); }
+       ,
+        error: function(s) 
+        {
+	//    alert("Setting Temp failed, URL : " + url);
+        }
+      });
+    }
+
+
+
+ 
+    function UpLevel() 
+    {
+	var LevelThreshold = parseInt(document.getElementById("LevelThreshold").innerHTML);
+	LevelThreshold ++;
+	if(LevelThreshold > 99 ) {LevelThreshold = 99};
+	var Adjustment = pad(LevelThreshold,2);
+	document.getElementById("LevelThreshold").innerHTML = Adjustment  ;
+	TankLevelValueChange(Adjustment);
+    }
+
+    function DownLevel() 
+    {
+	var LevelThreshold = parseInt(document.getElementById("LevelThreshold").innerHTML);
+	LevelThreshold --;
+	if(LevelThreshold < 0 ) {LevelThreshold = 0};
+	var Adjustment = pad(LevelThreshold,2);
+	document.getElementById("LevelThreshold").innerHTML = Adjustment  ;
+	TankLevelValueChange(Adjustment);
+    }
+
+
+
+function pad(number, length) {
+   
+    var str = '' + number;
+    while (str.length < length) {
+        str = '0' + str;
+    }
+   
+    return str;
+
+}
+
+
+
+
+    function ReadStatus() 
+    {
+      GetReadings();
+	  window.setTimeout(ReadStatus, 5000);
+    }
+
+	
+	function show()
+	{
+	 	document.getElementById('expand').style.display = 'block';
+	}
+	
+
+    $(document).ready(function() {ReadTriggerPoints();ReadSMTPDetails();ReadStatus();});
+
+
+    </script>
+        <title>Propane Tank Monitor</title>
+        <style type="text/css">
+            h1 {
+                background-image: url("tBar.png");
+                color: #fff;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 22px;
+            }
+            h2 {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+            }
+            body {
+                background-image: url("bkg.png");
+                text-align: center;
+            }
+            v\:roundrect {
+                -moz-border-radius: 10px;
+                -webkit-border-radius: 10px;
+                background-color: #aaa;
+                border-radius: 10px;
+                display: block;
+                margin: 0px auto;
+                width: 400px;
+            }
+            /* ie specific */
+            v\:roundrect {
+                /background-color: transparent;
+                /border: none;
+                /height: 100%;
+                /margin: 12;
+                behavior: url("#default#VML");
+            }
+            form {
+                background-color: #aaa;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: medium;
+                text-align: center;
+                vertical-align: middle;
+            }
+            img.center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+			div#expand {
+			display:none;
+			}			
+			
+        </style>
+    </head>
+    <body>
+        <xml:namespace ns="urn:schemas-microsoft-com:vml" prefix="v"/>
+        <text-align: center>
+            <div class="light">
+                <div class="center">
+                    <H1 align="center">Boiler Monitor</H1>
+                    <v:roundrect arcsize=".04" fillcolor="#AAA">
+                        <Table cellpadding="5" width="100%" align="Center">
+                            <tr>
+                                <td>
+                                    <fieldset style="text-align:Center;">
+                                        <legend><b>Current Status</b></legend>
+                                        <Table cellpadding="10">
+                                            <tr width="100%">
+											<td align="Left">
+												<label style="color:#0000;font-size: 30px;font-weight: bold;text-align:left;">Tank Temp :</label>
+											</td>
+                                                <td align="Right">
+                                                      <label ID="TankTempValue" style="color:#FFC;font-size: 30px;font-weight: bold;text-align:right;">0</label>
+                                            	</td>
+                                        	</tr>
+                                            <tr width="100%">
+											<td align="Left">
+												<label style="color:#0000;font-size: 30px;font-weight: bold;text-align:left;">External Temp :</label>
+											</td>
+                                                <td align="Right">
+                                                    <label ID="ExternTempValue" style="color:#FFC;font-size: 30px;font-weight: bold;text-align:right;">00</label>
+                                            	</td>
+                                        	</tr>
+                                            <tr width="100%">
+												<td align="Left" colspan="2">
+												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:left;">Status :</label>
+												&nbsp;
+                                                    <label ID="Status" style="color:#FFC;font-size: 15px;font-weight: bold;text-align:left;">Active</label>
+                                            	</td>
+                                        	</tr>
+                                            <tr width="100%">
+											<td align="Left" colspan="2">
+												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:left;">Blocks :</label>
+												&nbsp;
+                                                <label ID="Blocks" style="color:#FFC;font-size: 15px;font-weight: bold;text-align:left;">None</label>
+                                            	</td>
+                                        	</tr>
+											
+										</Table>
+                                	</fieldset>
+                            	</td>
+							</tr>
+                        </Table>
+					</v:roundrect>
+
+				    <v:roundrect arcsize=".04" fillcolor="#AAA">
+                        <Table cellpadding="5" width="100%" align="Center">
+                            <tr align="Center">
+                                <td align="Center">
+                                    <fieldset style="text-align:Center;">
+                                        <legend><b>Set Trigger Thresholds</b></legend>
+                                        <Table cellpadding="3"  align="Center">
+                                            <tr align="Center">
+												<td colspan="3">
+													<label ID="lblMins" style="color:#CFC;font-size: 16px;font-weight: bold;text-align:Center;">Tank&nbsp;Temperature</label>
+                                           		</td>
+
+                                        	</tr>
+
+                                            <tr  align="Center">
+                                                <td align="Center">
+                                                    <button onclick="JavaScript:UpLevel()" style="height:40;width:40;background-image:url(Hot.png);background-repeat:no-repeat;" type="button"></button>
+                                                </td>
+												<td align="Center">
+													<label ID="LevelThreshold" style="color:#FFC;font-size: 30px;font-weight: bold;text-align:Center;">00</label>
+                                       			</td>
+												<td align="Center">
+                                                	<button onclick="JavaScript:DownLevel()" style="height:40;width:40;background-image:url(Cold.png);background-repeat:no-repeat;" type="button"></button>
+                                            	</td>
+
+
+											</tr>
+                                    	</Table>
+                                	</fieldset>
+								</td>
+        					</tr>
+    					</Table>
+					</v:roundrect>
+
+					
+                    <v:roundrect arcsize=".04" fillcolor="#AAA">
+                        <Table cellpadding="5" width="100%" align="center">
+                            <tr>
+                                <td>
+                                    <fieldset style="text-align:center;">
+                                        <legend><b>SMTP Settings</b></legend>
+										<br>
+										<div id="expand">
+                                        <Table cellpadding="1">
+                                            <tr>
+											<td>
+												<label style="color:#0000;font-size: 12px;font-weight: bold;text-align:Center;">SMTP&nbsp;Server :</label>
+											</td>
+                                                <td>
+                                                      <input  ID="SMPTServer" type="text"></input>
+                                            	</td>
+                                        	</tr>
+                                            <tr>
+											<td>
+												<label style="color:#0000;font-size: 12px;font-weight: bold;text-align:Center;">User :</label>
+											</td>
+                                                <td>
+                                                      <input ID="SMPTUser"type="text"></input>
+                                            	</td>
+                                        	</tr>
+                                            <tr>
+
+											<td>
+												<label style="color:#0000;font-size: 12px;font-weight: bold;text-align:Center;">Pass :</label>
+											</td>
+                                                <td>
+                                                      <input ID="SMPTPass" type="text"></input>
+                                            	</td>
+												                                        	</tr>
+                                            <tr>
+
+											<td>
+												<label style="color:#0000;font-size: 12px;font-weight: bold;text-align:Center;">Address :</label>
+											</td>
+                                                <td>
+                                                      <input ID="SMPTAddress" type="text"></input>
+                                            	</td>
+
+                                        	</tr>
+                                        	<tr align="Center" width="100%">
+							  					<td align="left" width="50%">
+													<button onclick="JavaScript:SMTPChange()" style="height:30;width:140;font-size: 15px;font-weight: bold;text-align:center;" type="button">Update Settings</button>
+                                           		</td>
+							  					<td align="right" width="50%">
+													<button onclick="JavaScript:SMTPReset()" style="height:30;width:120;font-size: 15px;font-weight: bold;text-align:center;" type="button">Reset Alerts</button>
+                                           		</td>
+                                        	</tr>
+										</Table>
+										</div>
+                                	</fieldset>
+									<div  align="right">
+									  <a href="#" onclick="document.getElementById('expand').style.display=(document.getElementById('expand').style.display=='block')?'none':'block';">Show/Hide Settings</a>
+									</div>
+                            	</td>
+							</tr>
+                        </Table>
+					</v:roundrect>
+					
+										
+					
+				</div>
+			</div>
+		</body>
+</html>

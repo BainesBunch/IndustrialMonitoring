@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HttpLibrary", "HttpLibrary\HttpLibrary.csproj", "{DDD30B13-E0D4-4604-9310-1DAAC7F3E9B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDD30B13-E0D4-4604-9310-1DAAC7F3E9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD30B13-E0D4-4604-9310-1DAAC7F3E9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD30B13-E0D4-4604-9310-1DAAC7F3E9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD30B13-E0D4-4604-9310-1DAAC7F3E9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,112 @@
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\obj\Release\TinyCLR_DebugReferences.cache
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\le\HttpLibrary.dll
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\be\HttpLibrary.dll
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\le\HttpLibrary.pdb
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\be\HttpLibrary.pdb
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\HttpLibrary.dll
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\HttpLibrary.pdb
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\le\HttpLibrary.pe
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\le\HttpLibrary.pdbx
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\be\HttpLibrary.pe
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\be\HttpLibrary.pdbx
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.pe
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.pe
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.pdbx
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.pdbx
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.dll
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.NetduinoPlus.dll
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.pdb
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\obj\Release\HttpLibrary.dll
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\obj\Release\HttpLibrary.pdb
+C:\Users\Nart Schinackow\Desktop\HttpLibrary\HttpLibrary\bin\Release\HelpXml.xml
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\le\HttpLibrary.dll
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\be\HttpLibrary.dll
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\le\HttpLibrary.pdb
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\be\HttpLibrary.pdb
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\HttpLibrary.dll
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\HttpLibrary.pdb
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\HelpXml.xml
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\le\HttpLibrary.pe
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\le\HttpLibrary.pdbx
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\be\HttpLibrary.pe
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\be\HttpLibrary.pdbx
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.pe
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.pe
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.pdbx
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.pdbx
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.dll
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.NetduinoPlus.dll
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.pdb
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\obj\Release\TinyCLR_DebugReferences.cache
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\obj\Release\HttpLibrary.dll
+C:\Users\NART SCHINACKOW\Desktop\HttpServerLibExample\HttpLibrary\HttpLibrary\obj\Release\HttpLibrary.pdb
+C:\Users\NART SCHINACKOW\Desktop\HttpLibrary\HttpLibrary\obj\Release\HttpLibrary.csprojResolveAssemblyReference.cache
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\le\HttpLibrary.dll
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\be\HttpLibrary.dll
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\le\HttpLibrary.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\be\HttpLibrary.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\HttpLibrary.dll
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\HttpLibrary.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\HelpXml.xml
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\le\HttpLibrary.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\le\HttpLibrary.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\be\HttpLibrary.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\be\HttpLibrary.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.dll
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.NetduinoPlus.dll
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\obj\Release\HttpLibrary.csprojResolveAssemblyReference.cache
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\obj\Release\TinyCLR_DebugReferences.cache
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\obj\Release\HttpLibrary.dll
+C:\Users\NART SCHINACKOW\Desktop\My Work\Netduino Libraries\HttpLibrary v2\HttpLibrary\obj\Release\HttpLibrary.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\le\HttpLibrary.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\be\HttpLibrary.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\le\HttpLibrary.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\be\HttpLibrary.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\HttpLibrary.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\HttpLibrary.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\HelpXml.xml
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\le\HttpLibrary.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\le\HttpLibrary.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\be\HttpLibrary.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\be\HttpLibrary.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.NetduinoPlus.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\bin\Release\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\obj\Release\ResolveAssemblyReference.cache
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\obj\Release\TinyCLR_DebugReferences.cache
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\obj\Release\be\HttpLibrary.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\obj\Release\be\HttpLibrary.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\obj\Release\le\HttpLibrary.pe
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\obj\Release\le\HttpLibrary.pdbx
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\obj\Release\HttpLibrary.dll
+C:\Development\Live\IndustrialMonitoring\GasTankMonitoring\3rdPartylibs\HttpLibrary-v2\HttpLibrary v2\HttpLibrary\obj\Release\HttpLibrary.pdb
