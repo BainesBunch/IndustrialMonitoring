@@ -47,7 +47,7 @@ namespace NS_PerimeterMonitor
 
             Mailer = SMTPClient_Wrapper.ReadFromFile();
 
-            myServer = new TinyWS(config, credentials, 2048, 512, @"\SD");
+            myServer = new TinyWS(config, credentials, 1024, 1024, @"\SD");
 
             myServer.OnRequestReceived += new OnRequestReceivedDelegate(server_OnRequestReceived);//request received event fired upon client connection
             myServer.OnServerError += new OnErrorDelegate(server_OnServerError);//event fired when an error occurs
@@ -69,7 +69,7 @@ namespace NS_PerimeterMonitor
                                 InputMonitoring.AlarmPoints[iPin].EmailSent = true;
                                 //Mailer.SendMessage("The Perimiter alarm system has detected a trigger on " + InputMonitoring.AlarmPoints[iPin].PinName + " at " + InputMonitoring.AlarmPoints[iPin].DateTimeTriggerd.ToString());
                             }
-                            InputMonitoring.WriteToFile(AlarmStates);
+                            InputMonitoring.WriteToFile();
                         }
                     }
                 }
@@ -103,6 +103,35 @@ namespace NS_PerimeterMonitor
                 {
                     if (strSensorReadings.Length > 0) strSensorReadings += "~";
 
+                    if (InputMonitoring.AlarmPoints[iPin].Triggerd)
+                    {
+                        strSensorReadings += "YES";
+                        strSensorReadings += "^";
+                        strSensorReadings += InputMonitoring.AlarmPoints[iPin].DateTimeTriggerd.ToString();
+                    }
+                    else
+                    {
+                        strSensorReadings += "NO";
+                        strSensorReadings += "^";
+                    }
+                }                
+                
+                myServer.SendAJAX(strSensorReadings);
+            }
+            else if (REQUEST.IndexOf("ReadSMTPDetails") >= 0)
+            {
+                string strSensorReadings = Mailer.ServerName + ":" + Mailer.Username + ":" + Mailer.UserPass + ":" + Mailer.RecipientsAddress;
+                myServer.SendAJAX(strSensorReadings);
+            }
+            else if (REQUEST.IndexOf("ReadSettings") >= 0)
+            {
+
+                string strSensorReadings = "";
+
+                for (int iPin = 0; iPin < 14; iPin++)
+                {
+                    if (strSensorReadings.Length > 0) strSensorReadings += "~";
+
                     strSensorReadings += iPin.ToString();
 
                     strSensorReadings += "^";
@@ -125,21 +154,8 @@ namespace NS_PerimeterMonitor
                         strSensorReadings += "N";
                     }
 
-                    strSensorReadings += "^";
+                }
 
-                    if (InputMonitoring.AlarmPoints[iPin].Triggerd)
-                    {
-                        strSensorReadings += "YES";
-                        strSensorReadings += "^";
-                        strSensorReadings += InputMonitoring.AlarmPoints[iPin].DateTimeTriggerd.ToString();
-                    }
-                    else
-                    {
-                        strSensorReadings += "NO";
-                        strSensorReadings += "^";
-                    }
-                }                
-                
                 myServer.SendAJAX(strSensorReadings);
             }
             else if (REQUEST.IndexOf("ReadSMTPDetails") >= 0)
@@ -147,6 +163,29 @@ namespace NS_PerimeterMonitor
                 string strSensorReadings = Mailer.ServerName + ":" + Mailer.Username + ":" + Mailer.UserPass + ":" + Mailer.RecipientsAddress;
                 myServer.SendAJAX(strSensorReadings);
             }
+
+            else if (REQUEST.IndexOf("UpdateInputs") >= 0)
+            {
+                try
+                {
+                    string[] parts = REQUEST.Split('\r');
+                    for (int i = 0; i < parts.Length; i++)
+                    {
+                        if (replace(parts[i], "\n", "") == null)
+                        {
+                            string[] Items = replace(parts[i + 1], "\n", "").Split(':');
+                            int iPin = int.Parse(Items[0]);
+                            InputMonitoring.AlarmPoints[iPin].PinName = Items[1];
+                            InputMonitoring.AlarmPoints[iPin].PinType = (InputMonitoring.PinTypes)int.Parse(Items[2]);
+                            InputMonitoring.AlarmPoints[iPin].Email = (Items[3] == "Y");
+                            InputMonitoring.WriteToFile();
+                            }
+                        }
+                }
+                catch { }
+                myServer.SendAJAX("OK");
+            }
+
 
             else if (REQUEST.IndexOf("TriggerReset") >= 0)
             {

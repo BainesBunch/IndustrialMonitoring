@@ -8,7 +8,7 @@
 
     String.prototype.trim = function () {return this.replace(/^\s*/, "").replace(/\s*$/, "");};
 
-     function ReadStates() 
+    function ReadStates() 
     {
 
         url  = '/ReadStates'
@@ -22,12 +22,8 @@
 			  for (var i=1;i <= TempList.length; i ++)
 			  {
 			  	var Tempvalues = TempList[i-1].split('^');
-                document.getElementById("PinNumber" + i.toString()).innerHTML = pad(Tempvalues[0],2);
-               	document.getElementById("Location" + i.toString()).value = Tempvalues[1];
-               	document.getElementById("InputType" + i.toString()).value = Tempvalues[2];
-                document.getElementById("SendEmail" + i.toString()).checked  = (Tempvalues[3] == "Y");
-                document.getElementById("Triggered" + i.toString()).innerHTML = Tempvalues[4];
-                document.getElementById("TriggerTime" + i.toString()).innerHTML = Tempvalues[5];
+                document.getElementById("Triggered" + i.toString()).innerHTML = Tempvalues[0];
+                document.getElementById("TriggerTime" + i.toString()).innerHTML = Tempvalues[1];
 			  }
 			  
 	        },
@@ -39,9 +35,75 @@
     }
 
 	
-	
-	
+    function ReadSettings() 
+    {
 
+        url  = '/ReadSettings'
+
+        $.ajax({type: "GET",
+	        cache: false,
+	        url:  url,
+	        success: function(status) 
+	        {
+			  var TempList = status.split('~');
+			  for (var i=1;i <= TempList.length; i ++)
+			  {
+			  	var Tempvalues = TempList[i-1].split('^');
+                document.getElementById("PinNumber" + i.toString()).innerHTML = pad(Tempvalues[0],2);
+                document.getElementById("Location" + i.toString()).value = Tempvalues[1];
+                document.getElementById("InputType" + i.toString()).value = Tempvalues[2];
+                document.getElementById("SendEmail" + i.toString()).checked  = (Tempvalues[3] == "Y");
+			  }
+			  
+	        },
+	        error: function(s, status) 
+	        {
+		//    alert("Getting status failed, URL : " + url + ", Status : " + status);
+	        }
+	       });
+    }
+	
+	function InputChange(myInputPin)
+	{
+	  var outstring = "";
+      var url  = '/UpdateInputs'
+
+	  
+   	  outstring += myInputPin.toString();
+  	  outstring += ":"; 
+
+	  myInputPin  ++;
+
+  	  outstring += document.getElementById("Location" + myInputPin.toString() + "").value.toString();
+  	  outstring += ":"; 
+	  outstring += document.getElementById("InputType" + myInputPin.toString() + "").value.toString();
+  	  outstring += ":";
+	   
+	  if(document.getElementById("SendEmail" + myInputPin.toString()).checked)
+	  {
+	   	  outstring += "Y"; 
+	  }
+	  else
+	  {
+	   	  outstring += "N"; 
+	  }
+
+       $.ajax({type: "POST",
+       data: outstring,
+       dataType: "text",
+       cache: false,
+       url: url,
+       success: function(r) { ReadSettings(); }
+       ,
+        error: function(s) 
+        {
+	//    alert("Setting Temp failed, URL : " + url);
+        }
+      });
+
+
+	}
+	
 	function ReadSMTPDetails()
 	{ 
         url  = '/ReadSMTPDetails'
@@ -67,12 +129,12 @@
 	
 	
 	
-	function TriggerReset(myIinputPin)
+	function TriggerReset(myInputPin)
 	{
 	
        url  = '/TriggerReset'
        $.ajax({type: "POST",
-       data: myIinputPin.toString(),
+       data: myInputPin.toString(),
        dataType: "text",
        cache: false,
        url: url,
@@ -94,7 +156,7 @@
        dataType: "text",
        cache: false,
        url: url,
-       success: function(r) { GetReadings(); }
+       success: function(r) { ReadStates(); }
        ,
         error: function(s) 
         {
@@ -117,7 +179,7 @@
        dataType: "text",
        cache: false,
        url: url,
-       success: function(r) { GetReadings(); }
+       success: function(r) { ReadStates(); }
        ,
         error: function(s) 
         {
@@ -155,7 +217,7 @@ function pad(number, length) {
 	}
 	
 
-    $(document).ready(function() {ReadSMTPDetails();ReadStatus();});
+    $(document).ready(function() {ReadSettings(); ReadSMTPDetails();ReadStatus();});
 
 
     </script>
@@ -187,7 +249,7 @@ function pad(number, length) {
                 border-radius: 10px;
                 display: block;
                 margin: 0px auto;
-                width: 900px;
+                width: 950px;
             }
             /* ie specific */
             v\:roundrect {
@@ -250,10 +312,10 @@ function pad(number, length) {
 											<td align="Left">
 												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Triggered</label>
 											</td>
-											<td align="center">
+											<td align="center" width="180">
 												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Trigger&nbsp;Time</label>
 											</td>
-											<td align="center">
+											<td align="center" colspan="2">
 												<label style="color:#0000;font-size: 15px;font-weight: bold;text-align:center;">Action</label>
 											</td>
 											</tr>
@@ -275,13 +337,16 @@ function pad(number, length) {
 													<input ID="SendEmail1" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered1" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered1" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime1" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
-													<button onclick="JavaScript:TriggerReset(0)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+													<button onclick="JavaScript:TriggerReset(0)" style="height:20;width:50;font-size: 10px;font-weight:bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(0)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -301,13 +366,16 @@ function pad(number, length) {
 													<input ID="SendEmail2" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                        <label ID="Triggered2" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                        <label ID="Triggered2" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime2" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(1)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(1)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -327,13 +395,16 @@ function pad(number, length) {
 													<input ID="SendEmail3" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered3" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered3" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime3" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(2)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(2)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -353,13 +424,16 @@ function pad(number, length) {
 													<input ID="SendEmail4" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered4" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered4" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime4" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(3)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(3)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -379,13 +453,16 @@ function pad(number, length) {
 													<input ID="SendEmail5" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered5" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered5" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime5" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(4)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(4)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -405,13 +482,16 @@ function pad(number, length) {
 													<input ID="SendEmail6" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered6" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered6" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime6" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(5)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(5)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -431,13 +511,16 @@ function pad(number, length) {
 													<input ID="SendEmail7" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered7" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered7" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime7" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(6)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(6)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -457,13 +540,16 @@ function pad(number, length) {
 													<input ID="SendEmail8" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered8" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered8" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime8" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(7)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(7)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -483,13 +569,16 @@ function pad(number, length) {
 													<input ID="SendEmail9" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered9" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered9" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime9" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(8)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(8)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -509,13 +598,16 @@ function pad(number, length) {
 													<input ID="SendEmail10" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered10" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered10" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime10" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(9)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(9)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -535,13 +627,16 @@ function pad(number, length) {
 													<input ID="SendEmail11" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered11" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered11" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime11" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(10)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(10)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -561,13 +656,16 @@ function pad(number, length) {
 													<input ID="SendEmail12" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered12" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered12" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime12" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(11)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(11)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -587,13 +685,16 @@ function pad(number, length) {
 													<input ID="SendEmail13" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered13" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered13" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime13" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
                                             	</td>
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(12)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
+                                           		</td>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(12)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
                                             <tr>
@@ -613,7 +714,7 @@ function pad(number, length) {
 													<input ID="SendEmail14" type="checkbox" name="vehicle" value="Bike">
 												</td>
                                                 <td align="center">
-                                                      <label ID="Triggered14" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
+                                                      <label ID="Triggered14" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;">?</label>
                                             	</td>
                                                 <td align="center" nowrap>
                                                       <label ID="TriggerTime14" style="color:#FFFFCC;font-size: 15px;font-weight: bold;text-align:center;"></label>
@@ -621,13 +722,10 @@ function pad(number, length) {
 							  					<td align="center">
 													<button onclick="JavaScript:TriggerReset(13)" style="height:20;width:50;font-size: 10px;font-weight: bold;text-align:center;" type="button">Clear</button>
                                            		</td>
-                                        	</tr>
-                                        	<tr align="right" width="100%" >
-							  					<td align="right" width="100%" colspan="7">
-													<button onclick="JavaScript:SMTPChange()" style="height:30;width:140;font-size: 15px;font-weight: bold;text-align:center;" type="button">Update Settings</button>
+							  					<td align="center">
+													<button onclick="JavaScript:InputChange(13)" style="height:20;width:55;font-size: 10px;font-weight: bold;text-align:center;" type="button">Update</button>
                                            		</td>
                                         	</tr>
-
 										</Table>
 										</div>
 										<br>
@@ -703,9 +801,6 @@ function pad(number, length) {
 							</tr>
                         </Table>
 					</v:roundrect>
-					
-										
-					
 				</div>
 			</div>
 		</body>

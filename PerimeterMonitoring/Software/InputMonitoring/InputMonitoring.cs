@@ -33,8 +33,10 @@ namespace NS_InputMonitoring
         
         public static AlarmPoint[] AlarmPoints = new AlarmPoint[15];
         
-        public InputMonitoring()
+        public InputMonitoring(AlarmPoint[] myAlarmPoints)
         {
+            AlarmPoints = myAlarmPoints;
+
             Cpu.Pin MyPin = Pins.GPIO_NONE;
             for (int iPin = 0; iPin < 14; iPin++)
             {
@@ -87,12 +89,12 @@ namespace NS_InputMonitoring
                 AlarmPoints[iPin].PinNumber = MyPin;
                 AlarmPoints[iPin].button = new InterruptPort(MyPin, true, Port.ResistorMode.PullUp, Port.InterruptMode.InterruptEdgeLevelLow);
                 AlarmPoints[iPin].button.OnInterrupt += new NativeEventHandler(button_OnInterrupt);
-                AlarmPoints[iPin].EmailSent = false;
-                AlarmPoints[iPin].Email = true;
-                AlarmPoints[iPin].Triggerd = false;
-                AlarmPoints[iPin].DateTimeTriggerd = new DateTime();
-                AlarmPoints[iPin].PinName = "Not Yet Allocated";
-                AlarmPoints[iPin].PinType = PinTypes.Door;
+                //AlarmPoints[iPin].EmailSent = false;
+                //AlarmPoints[iPin].Email = true;
+                //AlarmPoints[iPin].Triggerd = false;
+                //AlarmPoints[iPin].DateTimeTriggerd = new DateTime();
+                //AlarmPoints[iPin].PinName = "Not Yet Allocated";
+                //AlarmPoints[iPin].PinType = PinTypes.Door;
             }
         }
         
@@ -107,18 +109,22 @@ namespace NS_InputMonitoring
             {
                 FileStream fs = new FileStream(@"\SD\AlarmPins.cfg", FileMode.Open, FileAccess.Read);
                 StreamReader Reader = new StreamReader(fs);
-                string Port = Reader.ReadLine();
-                string Baud = Reader.ReadLine();
-                string TXPin = Reader.ReadLine();
-                string RXPin = Reader.ReadLine();
-                string BusAddress = Reader.ReadLine();
+                for (int iPin = 0; iPin < 14; iPin++)
+                {
+                    string myParams = Reader.ReadLine();
+                    if (myParams != null)
+                    {
+                       string[] myParts = myParams.Split('~');
+                       AlarmPoints[iPin].PinName = myParts[0];
+                       AlarmPoints[iPin].PinType = (PinTypes) int.Parse(myParts[1]);
+                       AlarmPoints[iPin].Email = (myParts[2] == "Y");
+                    }
+                }
                 Reader.Close();
                 fs.Close();
-                return new InputMonitoring();
             }
             else
             {
-
                 for (int iPin = 0; iPin < 14; iPin++)
                 {
                     AlarmPoints[iPin].EmailSent = false;
@@ -129,34 +135,29 @@ namespace NS_InputMonitoring
                     AlarmPoints[iPin].PinType = PinTypes.Door;
                 }
 
-                InputMonitoring oPins = new InputMonitoring();
-                WriteToFile(oPins);
-                return oPins;
+                WriteToFile();
             }
+            return new InputMonitoring(AlarmPoints);
         }
 
-        public static void WriteToFile(InputMonitoring Credentials)
+        public static void WriteToFile()
         {
             FileStream fs = new FileStream(@"\SD\AlarmPins.cfg", FileMode.Create, FileAccess.Write);
             StreamWriter Writer = new StreamWriter(fs);
 
             AlarmPoint TempPoint;
 
+            string myLineBuffer = "";
+
             for (int iPin = 0; iPin < 14; iPin++)
             {
                 TempPoint = AlarmPoints[iPin];
-
-                Writer.Write(TempPoint.PinName);
-                Writer.Write("~");
-                Writer.Write(TempPoint.PinType);
-                Writer.Write("~");
-                Writer.Write(TempPoint.Triggerd);
-                Writer.Write("~");
-                Writer.Write(TempPoint.Email);
-                Writer.Write("~");
-                Writer.Write(TempPoint.EmailSent);
-                Writer.Write("~");
-                Writer.WriteLine(TempPoint.DateTimeTriggerd);
+                myLineBuffer = TempPoint.PinName;
+                myLineBuffer += "~";
+                myLineBuffer += TempPoint.PinType.ToString();
+                myLineBuffer += "~";
+                myLineBuffer += TempPoint.Email.ToString();
+                Writer.WriteLine(myLineBuffer);
             }
 
             Writer.Close();

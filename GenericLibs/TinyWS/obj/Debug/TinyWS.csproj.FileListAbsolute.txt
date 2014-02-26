@@ -145,3 +145,7 @@ C:\Development\Live\IndustrialMonitoring\GenericLibs\TinyWS\obj\Debug\ResolveAss
 C:\Development\Live\IndustrialMonitoring\GenericLibs\TinyWS\obj\Debug\TinyCLR_DebugReferences.cache
 C:\Development\Live\IndustrialMonitoring\GenericLibs\TinyWS\obj\Debug\TinyWS.dll
 C:\Development\Live\IndustrialMonitoring\GenericLibs\TinyWS\obj\Debug\TinyWS.pdb
+C:\Development\Live\IndustrialMonitoring\GenericLibs\TinyWS\obj\Debug\be\TinyWS.pe
+C:\Development\Live\IndustrialMonitoring\GenericLibs\TinyWS\obj\Debug\be\TinyWS.pdbx
+C:\Development\Live\IndustrialMonitoring\GenericLibs\TinyWS\obj\Debug\le\TinyWS.pe
+C:\Development\Live\IndustrialMonitoring\GenericLibs\TinyWS\obj\Debug\le\TinyWS.pdbx
