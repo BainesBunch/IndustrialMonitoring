@@ -21,7 +21,7 @@ namespace NS_PerimeterMonitor
         private static SMTPClient_Wrapper Mailer;
         private static InputMonitoring AlarmStates;
         private static NetworkInterface NI;
-
+        
         public static void Main()
         {
 
